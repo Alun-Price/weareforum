@@ -1,0 +1,6 @@
+# Ignore the following files
+
+*.pyc 
+*.wp* 
+*.sqlite3 
+weareforum/local_settings.py
