@@ -7,7 +7,10 @@ from django.template.context_processors import csrf
 from .forms import ThreadForm, PostForm, PollForm, PollSubjectForm
 from django.forms.formsets import formset_factory
 
+
 # Create your views here.
+
+
 @login_required
 def new_thread(request, subject_id):
     subject = get_object_or_404(Subject, pk=subject_id)
@@ -17,8 +20,7 @@ def new_thread(request, subject_id):
         post_form = PostForm(request.POST)
         poll_form = PollForm(request.POST)
         poll_subject_formset = poll_subject_formset(request.POST)
-        if thread_form.is_valid() and post_form.is_valid() and\
-            poll_form.is_valid and poll_subject_formset.is_valid():
+        if thread_form.is_valid() and post_form.is_valid() and poll_form.is_valid() and poll_subject_formset.is_valid():
             thread = thread_form.save(False)
             thread.subject = subject
             thread.user = request.user
@@ -41,6 +43,7 @@ def new_thread(request, subject_id):
             messages.success(request, "You have created a new thread!!")
 
             return redirect(reverse('thread', args={thread.pk}))
+
     else:
         thread_form = ThreadForm()
         post_form = PostForm(request.POST)
@@ -51,9 +54,10 @@ def new_thread(request, subject_id):
         'thread_form': thread_form,
         'post_form':post_form,
         'subject': subject,
-        'poll_form': subject,
+        'poll_form': poll_form,
         'poll_subject_formset': poll_subject_formset,
     }
+
     args.update(csrf(request))
 
     return render(request, 'thread_form.html', args)

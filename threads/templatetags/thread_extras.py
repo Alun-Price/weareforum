@@ -31,7 +31,7 @@ def user_vote_button(thread, subject, user):
     if not vote:
         if user.is_authenticated():
             link = """
-            <div class="col-md-s btn-vote">
+            <div class="col-md-3 btn-vote">
             <a href="%s" class="btn btn-default btn-sm">
                 Add my vote!!
             </a>
@@ -47,5 +47,7 @@ def vote_percentage(subject):
     count = subject.votes.count()
     if count == 0:
         return 0
+
     total_votes = subject.poll.votes.count()
+
     return (100 / total_votes) * count
