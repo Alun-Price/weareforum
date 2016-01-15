@@ -46,7 +46,6 @@ INSTALLED_APPS = (
     'accounts',
     'tinymce',
     'emoticons',
-    # 'debug_toolbar',
     'threads',
 
 )
@@ -68,7 +67,8 @@ ROOT_URLCONF = 'weareforum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -134,8 +134,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Stripe environment variables go here - see Mike's Deployment Notes
-
-TEMPLATE_DEBUG = False
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_zC4PnL57GxDRwOLuMzXm3oay')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_3s1N9OaOgygT8R8jsdAKBIO0')
 
 try:
     from local_settings import *
