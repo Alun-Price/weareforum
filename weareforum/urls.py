@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from accounts.views import login, register, logout, profile
 import settings
-from threads.views import threads, new_thread, thread, new_post, edit_post, delete_post
+from threads.views import threads, new_thread, thread, new_post, edit_post, delete_post, thread_vote
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -28,13 +28,13 @@ urlpatterns = [
     url(r'^register/$', 'accounts.views.register', name='register'),
     url(r'^login/$', 'accounts.views.login', name='login'),
     url(r'^/logout/$', 'accounts.views.logout', name='logout'),
+    url(r'^forum/$', 'threads.views.forum', name='forum'),
     url(r'^threads/(?P<subject_id>\d+)/$', 'threads.views.threads', name='threads'),
     url(r'^new_thread/(?P<subject_id>\d+)/$', 'threads.views.new_thread', name='new_thread'),
     url(r'^thread/(?P<thread_id>\d+)/$', 'threads.views.thread', name='thread'),
     url(r'^post/new/(?P<thread_id>\d+)/$', 'threads.views.new_post', name='new_post'),
     url(r'^post/edit/(?P<thread_id>\d+)/(?P<post_id>\d+)/$', 'threads.views.edit_post', name='edit_post'),
     url(r'^post/delete/(?P<post_id>\d+)/$', 'threads.views.delete_post', name='delete_post'),
-    url(r'^forum/$', 'threads.views.forum', name='forum'),
     url(r'^thread/vote/(?P<thread_id>\d+)/(?P<subject_id>\d+)/$', 'threads.views.thread_vote', name='cast_vote'),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + \
         static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
