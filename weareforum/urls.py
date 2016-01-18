@@ -16,9 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from accounts.views import login, register, logout, profile
+
 import settings
-from threads.views import threads, new_thread, thread, new_post, edit_post, delete_post, thread_vote
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
