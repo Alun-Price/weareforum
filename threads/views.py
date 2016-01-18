@@ -64,7 +64,7 @@ def new_thread(request, subject_id):
 
 def forum(request):
 
-    return render(request, 'forum.html', {'subjects': Subject.objects.all()})
+    return render(request, 'hello.html', {'subjects': Subject.objects.all()})
 
 def threads(request, subject_id):
     subject = get_object_or_404(Subject, pk=subject_id)
