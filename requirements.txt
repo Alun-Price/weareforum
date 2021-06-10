@@ -42,7 +42,7 @@ pyasn1-modules==0.0.8
 pycparser==2.14
 pygame==1.9.1
 pymongo==3.1
-pyOpenSSL==0.15.1
+pyOpenSSL==17.5.0
 pyparsing==2.0.5
 pypiwin32==219
 python-dateutil==2.4.2
