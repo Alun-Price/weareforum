@@ -20,7 +20,7 @@ django-forms-bootstrap==3.0.1
 django-paypal==0.2.5
 django-staticflatpages==0.4.0
 django-tinymce==2.0.4
-djangorestframework==3.2.4
+djangorestframework==3.11.2
 enum34==1.0.4
 funcsigs==0.4
 idna==2.0
