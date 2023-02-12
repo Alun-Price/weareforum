@@ -1,1 +1,1 @@
-"# weareforum"  initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/Alun-Price/weareforum.gitgit push -u origin master
+# weareforum
