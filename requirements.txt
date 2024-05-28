@@ -23,7 +23,7 @@ django-tinymce==3.4.0
 djangorestframework==3.11.2
 enum34==1.0.4
 funcsigs==0.4
-idna==2.0
+idna==3.7
 ipaddress==1.0.15
 lxml==4.9.1
 matplotlib==1.5.0
