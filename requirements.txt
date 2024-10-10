@@ -7,7 +7,7 @@ cryptography==42.0.4
 cssselect==0.9.1
 cycler==0.9.0
 disqus==0.0.4
-Django==3.2.25
+Django==4.2.16
 django-bootstrap-form==3.2
 django-ckeditor==5.0.2
 django-debug-toolbar==1.11.1
